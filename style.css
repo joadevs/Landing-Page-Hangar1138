@@ -1,0 +1,371 @@
+*{
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+.hipervinculos{
+    height: 60px;
+width: 100%;
+text-align: center;
+position: fixed;
+
+z-index: 100; /* Asegura que esté siempre por encima del contenido */
+
+background-color: black;
+}
+.hipervinculos a {
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    color: white; /* Color del texto */
+    margin-right: 60px;
+    margin-left: 60px;
+    font-size: 23px;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+}
+
+.hipervinculos a:hover::after {
+    content: ""; /* Crea un pseudo-elemento */
+    position: absolute; /* Posiciona el elemento */
+    left: 0; /* Alinea a la izquierda del enlace */
+    bottom: -2px; /* Espacio entre el texto y la línea */
+    width: 100%; /* La línea ocupará todo el ancho del enlace */
+    height: 2px; /* Grosor de la línea */
+    background-color: white; /* Color de la línea */
+    transition: all 0.3s ease; /* Transición suave */
+}
+.contenedor-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: black;
+    color: white;
+    gap: 40px;
+}
+/* Imagen */
+.contenedor-principal .img img {
+    width: 340px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+img{
+    width: 500px;
+}
+/* Texto */
+.contenedor-principal .texto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #EBAC23;
+}
+
+.contenedor-principal .texto p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 500px;
+}
+.redes {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    margin-top: 30px;
+    gap:100px;
+}
+
+.logo-facebook {
+    width: 170px;
+}
+
+.logo-ig {
+    width: 100px;
+}
+.contenedor-de-info{
+    width: 60%;
+    background-color: #EBAC23;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-de-info p{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.contenedor-servicios{
+    display: flex;
+    margin: 0 auto;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.restaurante {
+    width: 25%;
+    height: 250px; /* Ajusta la altura según lo que necesites */
+    background-image: url('img/b1375a84-40a9-40cc-a611-2918d106c511.jpg');
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+    text-align: center;
+    position: relative;
+    perspective: 1000px; /* Perspectiva para el efecto 3D */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el contenedor */
+}
+
+.restaurante h1 {
+    position: relative;
+    color: white; /* Color del texto */
+    z-index: 2;
+    transition: opacity 0.3s, visibility 0.3s; /* Transición suave */
+}
+
+.contenido-reverso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Fondo de la parte posterior */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden; /* Oculta la parte trasera al rotar */
+    transform: rotateY(180deg); /* Gira la parte trasera */
+    transition: transform 0.6s; /* Transición suave */
+    z-index: 1; /* Para que se superponga al filtro oscuro */
+}
+
+.restaurante:hover .contenido-reverso {
+    transform: rotateY(0deg); /* Vuelve a la posición original al pasar el mouse */
+}
+
+.restaurante:hover h1 {
+    opacity: 0; /* Oculta el texto al pasar el mouse */
+    visibility: hidden; /* Asegura que no ocupe espacio al ocultarse */
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #EBAC23;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #f8c964; /* Cambia el color al pasar el mouse */
+}
+.lavadero {
+    width: 25%;
+    height: 250px; /* Ajusta la altura según lo que necesites */
+    background-image: url('img/fdcaee2d-4848-4b22-aaaa-28ee002fe92e.jpg');
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+    text-align: center;
+    position: relative;
+    perspective: 1000px; /* Perspectiva para el efecto 3D */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el contenedor */
+}
+
+.lavadero h1 {
+    position: relative;
+    color: white; /* Color del texto */
+    z-index: 2;
+    transition: opacity 0.3s, visibility 0.3s; /* Transición suave */
+}
+
+.contenido-reverso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Fondo de la parte posterior */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden; /* Oculta la parte trasera al rotar */
+    transform: rotateY(180deg); /* Gira la parte trasera */
+    transition: transform 0.6s; /* Transición suave */
+    z-index: 1; /* Para que se superponga al filtro oscuro */
+}
+
+.lavadero:hover:hover .contenido-reverso {
+    transform: rotateY(0deg); /* Vuelve a la posición original al pasar el mouse */
+}
+
+.lavadero:hover h1 {
+    opacity: 0; /* Oculta el texto al pasar el mouse */
+    visibility: hidden; /* Asegura que no ocupe espacio al ocultarse */
+}
+
+.mecanica {
+    width: 25%;
+    height: 250px; /* Ajusta la altura según lo que necesites */
+    background-image: url('img/fcb96078-a066-42e5-8353-0f906c25423f.jpg');
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+    text-align: center;
+    position: relative;
+    perspective: 1000px; /* Perspectiva para el efecto 3D */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el contenedor */
+}
+
+.mecanica h1 {
+    position: relative;
+    color: white; /* Color del texto */
+    z-index: 2;
+    transition: opacity 0.3s, visibility 0.3s; /* Transición suave */
+}
+
+.contenido-reverso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Fondo de la parte posterior */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden; /* Oculta la parte trasera al rotar */
+    transform: rotateY(180deg); /* Gira la parte trasera */
+    transition: transform 0.6s; /* Transición suave */
+    z-index: 1; /* Para que se superponga al filtro oscuro */
+}
+
+.mecanica:hover:hover .contenido-reverso {
+    transform: rotateY(0deg); /* Vuelve a la posición original al pasar el mouse */
+}
+
+.mecanica:hover h1 {
+    opacity: 0; /* Oculta el texto al pasar el mouse */
+    visibility: hidden; /* Asegura que no ocupe espacio al ocultarse */
+}
+.wsp {
+    position: fixed; /* Posiciona el elemento de forma fija */
+    bottom: 20px; /* Distancia desde la parte inferior de la pantalla */
+    right: 20px; /* Distancia desde el borde derecho de la pantalla */
+    z-index: 1000; /* Asegura que el logo esté sobre otros elementos */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el logo */
+}
+
+.wsp img {
+    width: 80px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene las proporciones de la imagen */
+}
+.buscar-services {
+    width: 100%;
+    height: 100vh;
+    background-image: url('img/WhatsApp Image 2024-10-17 at 13.52.01 (1).jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.buscar-services .content {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro para mejorar la legibilidad */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    max-width: 90%; /* Limita el ancho para que sea más adaptable */
+}
+
+.buscar-services h1 {
+    font-size: 2rem;
+    margin-bottom: 30px; /* Mayor espacio debajo del texto */
+    color: #ffffff;
+}
+
+.btn-container {
+    margin-top: 20px;
+}
+
+.btn-buscar {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #EBAC23;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-buscar:hover {
+    background-color: #f8c964;
+}
+/* Contenedor de la sección de mapa */
+.map-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.map-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.map-section p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* Contenedor del mapa para ajustar su tamaño y estilos */
+.map-container {
+    width: 100%;
+    max-width: 800px; /* Limita el ancho máximo */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra alrededor del mapa */
+    border-radius: 10px;
+    overflow: hidden; /* Redondea bordes del mapa */
+}
+
+/* Ajuste para iframe */
+.map-container iframe {
+    border: none;
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+}
+.reservar-turno{
+    width: 100%;
+    color: white;
+    background-color: #EBAC23;
+}
