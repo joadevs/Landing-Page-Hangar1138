@@ -602,3 +602,17 @@ footer .text-izquier, footer .texto-medio, footer .texto-izquierda {
         font-size: 0.75rem;
     }
 }
+
+
+#patente {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    font-size: 18px;
+}
+#patente::placeholder{
+    color: rgb(218, 217, 217);
+}

@@ -1,0 +1,8 @@
+.servicios{
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #b8b8b8;
+    margin: auto;
+}
