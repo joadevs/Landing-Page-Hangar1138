@@ -10,51 +10,50 @@
 
 <body>
 
-<div class="caja-servicios">
-    <div class="servicios">
-        <h1 class="titulo">Servicios</h1>
-        <hr>
-        <table border="1">
-            <tr>
-                <th>N° Servicio</th>
-                <th>Fecha_Servicio</th>
-                <th>Kilomethaje</th>
-                <th>Observaciones</th>
-            </tr>
+    <div class="caja-servicios">
+        <div class="servicios">
+            <h1 class="titulo">Servicios</h1>
+            <hr>
+            <table border="1">
+                <tr>
+                    <th>N° Servicio</th>
+                    <th>Patente</th>
+                    <th>Fecha_Servicio</th>
+                    <th>Kilometraje</th>
+                    <th>Observaciones</th>
+                </tr>
+                <?php
+                require 'conexion.php';
+                if (isset($_POST['patente'])) {
+                    $patente = $_POST['patente'];
+
+                    $sqlCall_Busqueda = "CALL sp_BusquedaServicios(?)";
+                    $stmt = $conn->prepare($sqlCall_Busqueda);
+                    $stmt->bind_param("s", $patente);
+                    $stmt->execute();
+
+                    $result = $stmt->get_result();
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr class='tabla-datos' onclick=\"window.location.href='detalle_servicio.php?id=" . $row['ID_Vehicserv'] . "'\">
+                                    <td>" . $row['ID_Vehicserv'] . "</td>
+                                    <td>" . $row['Patente'] . "</td>
+                                    <td>" . $row['Fecha_Servicio'] . "</td>
+                                    <td>" . $row['Kilometraje'] . "</td>
+                                    <td>" . $row['Observaciones'] . "</td>
+                                </tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='5'>No se encontraron registros.</td></tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='5'>Ingrese la patente</td></tr>";
+                }
+                ?>
+            </table>
+        </div>
     </div>
-</div>
 
-    <?php
-        require 'conexion.php';
-
-        $sql = "CALL sp_BusquedaServicios()";
-        $result = $conn->query(query: $sql);
-        
-        if ($result->num_rows > 0) {
-            // Mostrar los datos en una tabla HTML
-            echo "<table border='1'>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Email</th>
-                    </tr>";
-        
-            // Fetch de los datos
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>
-                        <td>" . $row['ID'] . "</td>
-                        <td>" . $row['Nombre'] . "</td>
-                        <td>" . $row['Apellido'] . "</td>
-                        <td>" . $row['Email'] . "</td>
-                    </tr>";
-            }
-        
-            echo "</table>";
-        } else {
-            echo "No se encontraron registros.";
-        }
-    ?>
 </body>
 
 </html>
