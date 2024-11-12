@@ -3,7 +3,7 @@
     src: url(../fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf);
 }
 
-.caja-servicios{
+.caja-servicios {
     display: flex;
     /* border: 1px solid red; */
     justify-content: center;
@@ -11,27 +11,36 @@
     height: 97vh;
 }
 
-.servicios{
+.servicios {
     width: 1300px;
     height: 600px;
     position: absolute;
     border: 2px solid black;
     border-radius: 10px;
-    background-color: #b8b8b8;   
+    background-color: #b8b8b8;
 }
 
-.titulo{
+.titulo {
     font-family: nunito-sans;
     text-align: center;
 }
-hr{
+
+hr {
     height: 2px;
     border: none;
     background-color: black;
 }
-table{
-    flex: 1;
-    border: 1;
-    border-collapse: collapse;
 
+table{
+    border: 1px solid black;
+    width: 90%;
+    border-collapse: collapse;
+    margin: auto;
 }
+th, td{
+    padding: 10px;
+}
+th:nth-child(1), td:nth-child(1){  width: 10%;  }
+th:nth-child(2), td:nth-child(2){  width: 20%;  }
+th:nth-child(3), td:nth-child(3){  width: 20%;  }
+th:nth-child(4), td:nth-child(4){  width: 50%;  }
