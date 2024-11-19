@@ -14,10 +14,11 @@
         <div class="servicios">
             <h1 class="titulo">Servicios</h1>
             <hr>
+            <h2 class="titulo-patente">Servicios de la patente <?php echo ($_POST['patente']) ?></h2>
+            
             <table border="1">
                 <tr>
                     <th>N° Servicio</th>
-                    <th>Patente</th>
                     <th>Fecha_Servicio</th>
                     <th>Kilometraje</th>
                     <th>Observaciones</th>
@@ -37,7 +38,6 @@
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr class='tabla-datos' onclick=\"window.location.href='detalle_servicio.php?id=" . $row['ID_Vehicserv'] . "'\">
                                     <td>" . $row['ID_Vehicserv'] . "</td>
-                                    <td>" . $row['Patente'] . "</td>
                                     <td>" . $row['Fecha_Servicio'] . "</td>
                                     <td>" . $row['Kilometraje'] . "</td>
                                     <td>" . $row['Observaciones'] . "</td>

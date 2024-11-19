@@ -122,7 +122,7 @@ img{
 .restaurante {
     width: 25%;
     height: 250px; /* Ajusta la altura según lo que necesites */
-    background-image: url('img/b1375a84-40a9-40cc-a611-2918d106c511.jpg');
+    background-image: url('../img/b1375a84-40a9-40cc-a611-2918d106c511.jpg');
     background-size: cover; /* Hace que la imagen cubra todo el contenedor */
     background-position: center; /* Centra la imagen */
     display: flex;
@@ -186,7 +186,7 @@ img{
 .lavadero {
     width: 25%;
     height: 250px; /* Ajusta la altura según lo que necesites */
-    background-image: url('img/fdcaee2d-4848-4b22-aaaa-28ee002fe92e.jpg');
+    background-image: url('../img/fdcaee2d-4848-4b22-aaaa-28ee002fe92e.jpg');
     background-size: cover; /* Hace que la imagen cubra todo el contenedor */
     background-position: center; /* Centra la imagen */
     display: flex;
@@ -236,7 +236,7 @@ img{
 .mecanica {
     width: 25%;
     height: 250px; /* Ajusta la altura según lo que necesites */
-    background-image: url('img/fcb96078-a066-42e5-8353-0f906c25423f.jpg');
+    background-image: url('../img/fcb96078-a066-42e5-8353-0f906c25423f.jpg');
     background-size: cover; /* Hace que la imagen cubra todo el contenedor */
     background-position: center; /* Centra la imagen */
     display: flex;
@@ -297,7 +297,7 @@ img{
 .buscar-services {
     width: 100%;
     height: 100vh;
-    background-image: url('img/WhatsApp Image 2024-10-17 at 13.52.01 (1).jpeg');
+    background-image: url('../img/WhatsApp Image 2024-10-17 at 13.52.01 (1).jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
