@@ -36,9 +36,9 @@
                     $result = $stmt->get_result();
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<tr class='tabla-datos' onclick=\"window.location.href='detalle_servicio.php?id=" . $row['ID_Vehicserv'] . "'\">
-                                    <td>" . $row['ID_Vehicserv'] . "</td>
-                                    <td>" . $row['Fecha_Servicio'] . "</td>
+                            echo "<tr class='tabla-datos' onclick=\"window.location.href='detalle_servicio.php?id=" . $row['ID_VehicServ'] . "'\">
+                                    <td>" . $row['ID_VehicServ'] . "</td>
+                                    <td>" . $row['Fecha_Servicio'] . "</td> 
                                     <td>" . $row['Kilometraje'] . "</td>
                                     <td>" . $row['Observaciones'] . "</td>
                                 </tr>";
